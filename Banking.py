@@ -40,10 +40,10 @@ class Bank:
     def EdAmt(self):
         print('press 1. for Addition')
         print('press 2. for Subtraction')
-        ch1=int(input('Enter the mathematical operation you want to do with this account holder amount:'))
+        ch1=int(input('Enter your choice that you want to go forward for the account holder amount:'))
         if(ch1==1):
             AmtAdd=int(input('Enter the amount you want to add into the account holder amount:'))
-            AccHolid1=int(input('Enter the account no. on which you want to do this operation:'))
+            AccHolid1=int(input('Enter the account id on which you want to do this operation:'))
             for j in Bank.nAcc:
                 if(AccHolid1 == j):
                     for y in Bank.nAcc[AccHolid1]:
@@ -53,7 +53,7 @@ class Bank:
 
         elif(ch1==2):
             AmtSub = int(input('Enter the amount you want to add into the account holder amount:'))
-            AccHolid2 = int(input('Enter the account no. of a customer on which you want to do this operation:'))
+            AccHolid2 = int(input('Enter the account id of a customer on which you want to do this operation:'))
             for k in Bank.nAcc:
                 if (AccHolid2 == k):
                         for x in Bank.nAcc[AccHolid2]:
