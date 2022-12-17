@@ -3,10 +3,12 @@ class Bank:
     nAcc = {}
     nEnq={}
     c=0
-
+    l=[]
+    
     def NewAcc(self):
         print("Please enter the Account holder id of 3 digits only")
         AccHolId = int(input("Enter the new account holder id:"))
+        Bank.l.append(AccHolId)
         AccHolNm = input('Enter the new account holder name:')
         AccHolAge = int(input('Enter the new account holder age:'))
         AccHolAmt = int(input('Enter the amount deposited by the account holder:'))
@@ -25,6 +27,7 @@ class Bank:
         if(len(Bank.nAcc)==0):
             print('Empty List')
         print(Bank.nAcc)
+        print(Bank.l)
 
     def DispIAcc(self):
         dispAcc = int(input('Enter the Account no. you want to show their details:'))
