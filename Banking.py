@@ -4,7 +4,6 @@ class Bank:
     nEnq={}
     c=0
     l=[]
-    
     def NewAcc(self):
         print("Please enter the Account holder id of 3 digits only")
         AccHolId = int(input("Enter the new account holder id:"))
@@ -40,7 +39,8 @@ class Bank:
     def EdAmt(self):
         print('press 1. for Addition')
         print('press 2. for Subtraction')
-        ch1=int(input('Enter your choice that you want to go forward for the account holder amount:'))
+        print('press 3. to add interest amount')
+        ch1=int(input('Enter the mathematical operation you want to do with this account holder amount:'))
         if(ch1==1):
             AmtAdd=int(input('Enter the amount you want to add into the account holder amount:'))
             AccHolid1=int(input('Enter the account id on which you want to do this operation:'))
@@ -60,6 +60,18 @@ class Bank:
                             if(x==[Bank.c]):
                                 p=Bank.c-AmtSub
                                 Bank.nAcc[AccHolid2][2]=[p]
+
+        elif(ch1==3):
+            AmtInPer=int(input('Enter the percent interest that you want to apply into this Account holder amount:'))
+            AccHolid3 = int(input('Enter the account id of a customer on which you want to do this operation:'))
+            AmtIn=(((Bank.c)*1*AmtInPer)/100)
+            for p in Bank.nAcc:
+                if (AccHolid3 ==p):
+                        for q in Bank.nAcc[AccHolid3]:
+                            if(q==[Bank.c]):
+                                r=Bank.c+AmtIn
+                                Bank.nAcc[AccHolid3][2]=[r]
+
 
         else:
             print('No Operation')
@@ -109,3 +121,4 @@ while(True):
     else:
         print('Wrong Choice')
         break
+        
